@@ -1,10 +1,15 @@
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <BlynkSimpleEsp32.h>
+/* Comment this out to disable prints and save space */
+#define BLYNK_PRINT Serial
+
+// #define BLYNK_DEBUG        // Optional, this enables more detailed prints
 
 #define BLYNK_TEMPLATE_ID "TMPLnLAhFJqH"
 #define BLYNK_DEVICE_NAME "ESP32 RODAI"
-#define BLYNK_AUTH_TOKEN "t1jj0Hu1bb4hBZbOIxJBHmqUgKw1AnyK"
+#define BLYNK_AUTH_TOKEN "kj4mYVKxPbrDwBGN7epccY5yA44Szobe"
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
 
 #define SOIL_SENSOR_1 V5
 #define SOIL_SENSOR_2 V6
@@ -14,9 +19,6 @@
 #define AMBIENT_TEMPERATURE_SENSOR V20
 #define AMBIENT_HUMIDITY_SENSOR V21
 #define LIGHT_SENSOR V25
-
-/* Comment this out to disable prints and save space */
-#define BLYNK_PRINT Serial
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
