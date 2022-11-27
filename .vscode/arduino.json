@@ -3,5 +3,6 @@
     "board": "esp32:esp32:esp32",
     "sketch": "rodaiSensorBlynk.ino",
     "programmer": "esp32:esptool",
-    "port": "COM10"
+    "port": "COM10",
+    "output": "./build"
 }

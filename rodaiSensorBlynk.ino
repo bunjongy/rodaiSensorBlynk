@@ -3,13 +3,19 @@
 
 // #define BLYNK_DEBUG        // Optional, this enables more detailed prints
 
-#define BLYNK_TEMPLATE_ID "TMPLnLAhFJqH"
-#define BLYNK_DEVICE_NAME "ESP32 RODAI"
-#define BLYNK_AUTH_TOKEN "kj4mYVKxPbrDwBGN7epccY5yA44Szobe"
+#include "config.h"
+
+#define BLYNK_TEMPLATE_ID BLYNK_TEMPLATE_ID_OWNER
+#define BLYNK_DEVICE_NAME BLYNK_DEVICE_NAME_OWNER
+#define BLYNK_AUTH_TOKEN BLYNK_AUTH_TOKEN_OWNER
 
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
+
+#include "RodaiSensor.h"
+
+#include "esp_log.h"
 
 #define SOIL_SENSOR_1 V5
 #define SOIL_SENSOR_2 V6
@@ -26,16 +32,27 @@ char auth[] = BLYNK_AUTH_TOKEN;
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "Sang_wee_2.4G";
-char pass[] = "Jong@2224";
+char ssid[] = WIFI_SSID;
+char pass[] = WIFI_PASS;
 
 BlynkTimer timer;
+
+RodaiSensor rodaiSensor = RodaiSensor();
 
 // This function sends Arduino's up time every second to Virtual Pin (5).
 // In the app, Widget's reading frequency should be set to PUSH. This means
 // that you define how often to send data to Blynk App.
 void myTimerEvent()
 {
+    uint8_t data[256];
+    
+    int len = rodaiSensor.ReadHoldingRegisters(16, 6, 5, data);
+
+    for (int i = 0; i < len; i++)
+    {
+        ESP_LOGI("MAIN", "DATA@%d=%0X",i, data[i]);
+    }
+
     // You can send any value at any time.
     // Please don't send more that 10 values per second.
     Blynk.virtualWrite(SOIL_SENSOR_1, 0.4334f);

@@ -217,6 +217,7 @@
                 "C:\\Users\\Bunjong Yosapa\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.5\\variants\\esp32",
                 "C:\\Users\\Bunjong Yosapa\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\2.0.5\\libraries\\WiFi\\src",
                 "C:\\arduino_work\\libraries\\Blynk\\src",
+                "C:\\arduino_work\\libraries\\RodaiSensor",
                 "c:\\users\\bunjong yosapa\\appdata\\local\\arduino15\\packages\\esp32\\tools\\xtensa-esp32-elf-gcc\\gcc8_4_0-esp-2021r2-patch3\\xtensa-esp32-elf\\include\\c++\\8.4.0",
                 "c:\\users\\bunjong yosapa\\appdata\\local\\arduino15\\packages\\esp32\\tools\\xtensa-esp32-elf-gcc\\gcc8_4_0-esp-2021r2-patch3\\xtensa-esp32-elf\\include\\c++\\8.4.0\\xtensa-esp32-elf",
                 "c:\\users\\bunjong yosapa\\appdata\\local\\arduino15\\packages\\esp32\\tools\\xtensa-esp32-elf-gcc\\gcc8_4_0-esp-2021r2-patch3\\xtensa-esp32-elf\\include\\c++\\8.4.0\\backward",
